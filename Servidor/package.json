@@ -1,0 +1,26 @@
+{
+  "name": "servidor",
+  "version": "1.0.0",
+  "description": "proyecto para criptografia",
+  "main": "index.js",
+  "scripts": {
+    "criptografia": "nodemon ./index.js --exec babel-node -e js"
+  },
+  "author": "Luis Gerson Avendanio alvira",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "cors": "^2.8.5",
+    "crypto": "^1.0.1",
+    "express": "^4.17.1",
+    "express-jwt": "^5.3.1",
+    "express-jwt-authz": "^2.3.1",
+    "jwks-rsa": "^1.6.0",
+    "nodemon": "^1.19.4"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-stage-0": "^6.24.1"
+  }
+}

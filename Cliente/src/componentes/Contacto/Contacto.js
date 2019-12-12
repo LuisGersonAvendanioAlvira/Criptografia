@@ -1,5 +1,8 @@
 import React, { Component } from 'react';
 import './Contacto.css';
+import ReCAPTCHA from "react-google-recaptcha";
+
+let recaptchaRef = React.createRef();
 
 class Contacto extends Component {
 
@@ -7,6 +10,21 @@ class Contacto extends Component {
           this.props.auth.login();
 
      }
+
+     onSubmit = () => {
+          const recaptchaValue = recaptchaRef.current.getValue();
+          this.props.onSubmit(recaptchaValue);
+     }
+
+     leerDatos = (e) => {
+          const termino = e.target.value;
+
+          var htmlspecialchars = require('htmlspecialchars');
+
+          console.log(htmlspecialchars(termino));
+     }
+
+
 
      render() {
 
@@ -17,20 +35,30 @@ class Contacto extends Component {
           return (
                <React.Fragment>
                     {isAuthenticated() && (
-                         <form>
+                         <form onSubmit={this.onSubmit}>
                               <legend>Formulario de Contacto</legend>
                               <div className="input-field">
                                    <label>Nombre: </label>
-                                   <input type="text" placeholder="Tu Nombre" />
+                                   <input  type="text" placeholder="Tu Nombre" onChange={this.leerDatos}/>
                               </div>
                               <div className="input-field">
                                    <label>Email: </label>
-                                   <input type="email" placeholder="Tu Email" />
+                                   <input type="email" placeholder="Tu Email" onChange={this.leerDatos}/>
                               </div>
                               <div className="input-field">
                                    <label>Mensaje: </label>
                                    <textarea></textarea>
                               </div>
+                              <div className="recaptcha">
+                                   <ReCAPTCHA
+                                   ref={recaptchaRef}
+                                   //6LcXVscUAAAAAC_aVwkoamV3pM5-WOV-1sOS8hBX
+                                   //6LcLVscUAAAAAMjVvEWl1R2S7w8PL7o88CsdivsD
+                                   sitekey="6LcLVscUAAAAAMjVvEWl1R2S7w8PL7o88CsdivsD"
+                                   onChange={this.onChange}
+                              />
+                              </div>
+
                               <div className="input-field enviar">
                                    <input type="submit" value="Enviar" />
                               </div>

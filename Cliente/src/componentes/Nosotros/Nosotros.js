@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
 import './Nosotros.css';
 
+
+
+
 class Nosotros extends Component {
 
      
@@ -28,6 +31,8 @@ class Nosotros extends Component {
           dec += decipher.final('utf8');
           return dec;
      }
+
+    
 
      render() {
           return (

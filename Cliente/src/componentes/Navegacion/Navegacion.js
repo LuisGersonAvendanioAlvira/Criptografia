@@ -2,6 +2,10 @@ import React, { Component } from 'react';
 import { NavLink, Link } from 'react-router-dom';
 import './Navegacion.css';
 
+
+
+
+
 class Navegacion extends Component {
 
      cerrarSesion = () => {
@@ -12,7 +16,7 @@ class Navegacion extends Component {
           this.props.auth.login();
      }
 
-
+    
 
 
      render() {

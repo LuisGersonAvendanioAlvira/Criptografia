@@ -43,3 +43,7 @@ form {
  .enviar {
      justify-content: flex-end;
  }
+ .recaptcha{
+     margin-left: 35%;
+     margin-bottom: 3%;
+ }

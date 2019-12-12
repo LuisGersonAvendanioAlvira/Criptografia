@@ -31,7 +31,7 @@ function encrypt (text)
 {
     const crypto = require('crypto'),
         algorithm = 'aes-256-ctr',
-        password = 'arquitectura20199102arutcetiuqra';
+        password = 'criptografia20199102aifargotpirc';
     
     const cipher = crypto.createCipher(algorithm,password)
     let crypted = cipher.update(text,'utf8','hex')
@@ -111,6 +111,7 @@ app.get('/productos', jwtCheck, checkScope, (req, res)=>{
     //const codificado = encrypt(JSON.stringify(productos));
 
     res.json(encrypt(JSON.stringify(productos)));
+    //res.json(JSON.stringify(productos));
 
 });
 

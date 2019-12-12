@@ -12,7 +12,7 @@ class Buscador extends Component {
 
           console.log(htmlspecialchars(termino));
           // enviamos por props
-          this.props.busqueda(termino);
+          this.props.busqueda(htmlspecialchars(termino));
      }
 
      render() {

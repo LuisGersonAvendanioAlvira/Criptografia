@@ -23,15 +23,15 @@ class Router extends Component {
      }
 
      busquedaProducto = (busqueda) => {
-       if(busqueda.length > 3) {
-         this.setState({
-           terminoBusqueda : busqueda
-         })
-       } else {
+          if(busqueda.length > 3) {
           this.setState({
-            terminoBusqueda: ''
+               terminoBusqueda : busqueda
           })
-       }
+          } else {
+          this.setState({
+               terminoBusqueda: ''
+          })
+          }
      }
 
      render() { 
@@ -41,11 +41,11 @@ class Router extends Component {
           let resultado;
           
           if(busqueda !== '') {
-            resultado = productos.filter(producto => (
-              producto.nombre.toLowerCase().indexOf( busqueda.toLowerCase()  ) !== -1
-            ))
+               resultado = productos.filter(producto => (
+               producto.nombre.toLowerCase().indexOf( busqueda.toLowerCase()  ) !== -1
+               ))
           } else {
-            resultado = productos;
+               resultado = productos;
           }
 
 
@@ -64,11 +64,11 @@ class Router extends Component {
                               ) } />
                               <Route exact path="/nosotros" component={Nosotros} />
                               <Route exact path="/productos" render={ () => (
-                                  <Productos
-                                    productos={resultado}
-                                    busquedaProducto={this.busquedaProducto}
-                                  />
-                                ) } />
+                                   <Productos
+                                        productos={resultado}
+                                        busquedaProducto={this.busquedaProducto}
+                                   />
+                                   ) } />
                               <Route exact path="/producto/:productoId" render={(props) => {
                                    let idProducto = props.location.pathname.replace('/producto/', '');
                                    return (
@@ -83,8 +83,6 @@ class Router extends Component {
                          </Switch>
                     </div>
                </BrowserRouter>
-           )
+          )
      }
-}
- 
-export default Router;
+}export default Router;

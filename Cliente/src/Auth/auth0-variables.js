@@ -6,6 +6,6 @@ export const AUTH_CONFIG = {
 
   domain: 'dev-1mq2zc5e.auth0.com',
   clientID: 'vs05i0dOGLKxAOQI262EijtXC7sFC4AB',
-  callbackUrl: 'http://localhost:3001/callback',
+  callbackUrl: 'http://35.188.20.155:3001/callback',
   apiURL: 'http://productos'
 }

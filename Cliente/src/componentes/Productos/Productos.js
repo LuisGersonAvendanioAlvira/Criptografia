@@ -35,7 +35,7 @@ class Productos extends Component {
 
           const headers = { 'Authorization': `Bearer ${getAccessToken()}` };
 
-          const url = 'http://localhost:4100/productos';
+          const url = 'http://35.188.20.155:4100/productos';
 
           return axios.get(url, { headers })
                .then((respuesta) => {

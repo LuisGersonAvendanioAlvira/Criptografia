@@ -54,7 +54,7 @@ class Contacto extends Component {
                                    ref={recaptchaRef}
                                    //6LcXVscUAAAAAC_aVwkoamV3pM5-WOV-1sOS8hBX
                                    //6LcLVscUAAAAAMjVvEWl1R2S7w8PL7o88CsdivsD
-                                   sitekey="6LcLVscUAAAAAMjVvEWl1R2S7w8PL7o88CsdivsD"
+                                   sitekey="6LeLW8cUAAAAAKJ95jshib60s0M54BIhmgaLcnvH"
                                    onChange={this.onChange}
                               />
                               </div>
